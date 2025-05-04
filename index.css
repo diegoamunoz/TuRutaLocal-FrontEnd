@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /**colors*/
+    --Azul: #2274A5 ;
+    --naranjagrisaceo: #E7DFC6;
+    --verydark: #131B23;
+    --morado: #7E2E84;
+    /**fonts*/
+    --overall-fontsize: 62.5%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size:var(--overall-fontsize) }            
+     /**16px *0.625 = 10 px conversion en base 10*/
+
+body {
+    font-size: 1.4 rem;  
+    /** 14px; */ 
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.main-container {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 6rem;
+    background-color:aliceblue ;
+}
+
+.main {
+    flex-grow: 3;
+}
+
+/* Resumen reserva y call to action */
+
+.resumenreserva {
+    /* background-color: var(--naranjagrisaceo); */
+    /* display: flex
+; */
+    height: 60rem;
+    /* align-items: center;
+    text-align: center; */
+    color: white;
+}
+
+.imgcalltoaction {
+    width: 43.4rem;
+}
+
+.imgcalltoaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-image: url(./img/fondocalltoaction.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30rem;
+    margin: 0;
+    padding: 0;
+    width: 42REM;
+}
+
+.imgcalltoaction h1 {
+    margin: 0;
+    background-color: rgba(231, 223, 198, 0.7);
+    color: var(--verydark);
+    height: 7rem;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.datosreserva {
+    height: 30rem;
+    color: black;
+    margin-top: 0.5rem;
+}
+
+.cuadroreserva {
+    border: solid;
+    margin: 5px 7px 0 7px;
+    border-width: 1px;
+    border-color: #2274A5;
+}
+
+.cuadroreserva h2, h3, h4 {
+    text-align: left;
+    padding-left: 1.5rem;
+}
+
+.cuadroreserva h2 {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 700;
+}
+
+.cuadroreserva h3 {
+    font-size: 2.9rem;
+    color: #7E2E84;
+    font-weight: 900;
+    margin-top: 1rem;
+}
+
+.cuadroreserva img {
+    height: 50px;
+    width: 92px;
+    margin: -4rem 0 1rem -28.5rem;
+}
+.cuadroreserva h4 {
+    font-size: 1.1rem;
+    margin-top: -18px;
+}
+
+
+.fechareserva {
+    height: 3rem;
+    width: 36rem;
+    padding-left: 1.5rem;
+    display: flex;
+    gap: 0rem;
+    border: solid;
+    border-width: 1px;
+    margin-left: 14px;
+    border-color: #2274A5;
+}
+
+.fechareserva h5 {
+    margin-left: 2rem;
+    font-size: 1.1rem;
+}
+
+.fechareserva img {
+    width: 25px;
+    height: 24px;
+    margin: 0;
+}
+
+.fecha {
+    display: flex;
+    width: 20rem;
+    align-items: center;
+}
+
+.numeropersonas {
+    display: flex;
+    width: 20rem;
+    align-items: center;
+}
+
+.precio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.precio h1 {
+    font-size: 2.2rem;
+    color: #7E2E84;
+}
+
+.precio button {
+    background-color: #59BFF3;
+    color: black;
+    border: none;
+    padding: -2rem;
+    padding: 0.3rem 2rem;
+    border-radius: 13px;
+}
+
+.formreserva {
+    height: 100rem;
+    margin-top: -2rem;
+    line-height: 2rem;
+    text-align: left;
+    /* margin-left: 1rem; */
+    /* margin-right: 5rem; */
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
+
+.formreserva h1 {
+    margin-left: 2rem;
+}
+
+.form-container {
+    width: 346px;
+    margin: 12px 0px;
+    padding: 30px;
+    background-color: #f6f1e9;
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #892c80;
+    font-size: 24px;
+    margin-bottom: -4px;
+    margin-top: -12px;
+}
+
+.subtitle {
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 19px;
+}
+
+form input[type="text"], form input[type="email"], form input[type="tel"] {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 23px;
+    border: none;
+    background-color: #D9D9D9;
+    font-size: 16px;
+    border-radius: 9px;
+}
+
+form input::placeholder {
+    color: #333;
+    padding: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.checkbox-label input {
+    margin-right: 10px;
+}
+
+.form-container button {
+background-color: #892c80;
+color: white;
+padding: 12px 24px;
+border: none;
+border-radius: 25px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+width: 100%;
+}
+
+
+
+
+
+
