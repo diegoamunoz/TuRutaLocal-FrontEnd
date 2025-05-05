@@ -35,10 +35,70 @@ body {
 }
 
 .header {
-    height: 6rem;
-    background-color: aliceblue;
-    width: 42rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 119px;
 }
+  
+  /* Botón hamburguesa visible solo en móviles */
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+  }
+  
+  /* Menú oculto por defecto */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li a {
+    text-decoration: none;
+    color: #7E2E84;
+    font-weight: 500;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav li a img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Cuando se activa el menú */
+  .nav.active {
+    display: block;
+  }
 
 .main {
     flex-grow: 3;
@@ -301,6 +361,64 @@ width: 100%;
     padding-right: 8px;
 }
 
+.footer {
+    background-color: #2274A5;
+    color: white;
+    padding: 2.5rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    margin-top: 2rem;
+    width: auto;
+}
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0rem;
+    margin-top: -3REM;
+}
+  
+  .footer-logo img {
+    height: 140px;
+    margin-bottom: 1rem;
+}
+  
+  .social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .social-icons img {
+    width: 26px;
+    height: 26px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  
+  .footer-contacto h4 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+  
+  .footer-contacto p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+  }
+  
+  .footer-contacto img {
+    width: 20px;
+    height: 20px;
+  }
+
 .maincontainer {
     /* border: 2px dotted blue; */
     width: auto;
@@ -325,17 +443,39 @@ width: 100%;
         width: auto;
         padding: 0 1.6rem;
     }
-}
-
-@media ( min-width: 768px ) {
-    .maincontainer {
-        max-width: 118rem;
-        padding: 0 0.4rem;
-    }
 
     .header {
-        width: 1351px;
+        flex-direction: row;
+        padding: 1rem 4rem;
+      }
+    
+      .menu-toggle {
+        display: none; /* Ocultar hamburguesa */
+      }
+    
+      .nav {
+        display: block !important;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin-right: -53rem;
     }
+    
+      .nav ul {
+        flex-direction: row;
+        gap: 2.5rem;
+      }
+    
+      .nav li a {
+        font-size: 1.5rem;
+      }
+    
+      .nav li a img {
+        width: 22px;
+        height: 22px;
+      }
     section.resumenreserva {
         display: flex;
         flex-direction: row-reverse;
@@ -539,8 +679,334 @@ width: 100%;
         line-height: 5rem;
     }
 
+    .footer {
+        background-color: #2274A5;
+        color: white;
+        padding: 2.5rem 1.5rem;
+        font-family: "Poppins", sans-serif;
+        margin-top: 2rem;
+        width: 133rem;
+    }
 
+    .footer-container {
+        gap: 18rem;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+  
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-logo img {
+        margin-bottom: 2rem;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+        margin-top: -3rem;
+    }
+  
+    .footer-contacto {
+      max-width: 300px;
+    }
+  
+    .footer-contacto p {
+      justify-content: flex-start;
+    }
 }
+
+@media ( min-width: 768px ) {
+    .maincontainer {
+        max-width: auto;
+        padding: 0 0.4rem;
+    }
+
+    .header {
+        flex-direction: row;
+        padding: 1rem 4rem;
+      }
+    
+      .menu-toggle {
+        display: none; /* Ocultar hamburguesa */
+      }
+    
+      .nav {
+        display: block !important;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin-right: -53rem;
+    }
+    
+      .nav ul {
+        flex-direction: row;
+        gap: 2.5rem;
+      }
+    
+      .nav li a {
+        font-size: 1.5rem;
+      }
+    
+      .nav li a img {
+        width: 22px;
+        height: 22px;
+      }
+    section.resumenreserva {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        margin: 0;
+        height: 330px;
+        width: 1351px;
+    }
+
+    .imgcalltoaction {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-image: url(./img/fondocalltoaction.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 33rem;
+        /* margin: 0; */
+        /* padding: 0px; */
+        width: 50%;
+        margin-top: 0px;
+    }
+
+    .imgcalltoaction h1 {
+        margin: 0;
+        background-color: rgba(231, 223, 198, 0.7);
+        color: var(--verydark);
+        height: 10rem;
+        font-size: 3.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .datosreserva {
+        height: 33rem;
+        color: black;
+        margin-top: 0.1rem;
+        margin-left: 0rem;
+        width: 50%;
+    }
+
+    .cuadroreserva {
+        border: solid;
+        margin: 5px 7px 0 7px;
+        border-width: 1px;
+        border-color: #2274A5;
+        height: 32REM;
+    }
+
+    .cuadroreserva h2 {
+        font-size: 2rem;
+        color: black;
+        font-weight: 700;
+    }
+
+    .cuadroreserva h3 {
+        font-size: 3.2rem;
+        color: #7E2E84;
+        font-weight: 900;
+        margin-top: 1rem;
+    }
+
+    .cuadroreserva img {
+        height: 45px;
+        width: 90px;
+        margin-top: -39px;
+        display: flex;
+        margin-left: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .cuadroreserva h4 {
+        font-size: 2.1rem;
+        margin-top: -18px;
+    }
+
+    .fechareserva {
+        height: 4rem;
+        width: 40rem;
+        padding-left: 1.5rem;
+        display: flex;
+        gap: 9rem;
+        border: solid;
+        border-width: 1px;
+        margin-left: 14px;
+        border-color: #2274A5;
+        margin-top: -14px;
+    }
+
+    .precio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 21rem;
+    }
+
+    .precio h1 {
+        font-size: 2.5rem;
+        color: #7E2E84;
+    }
+
+    .precio button {
+        background-color: #59BFF3;
+        color: white;
+        border: none;
+        padding: -2rem;
+        padding: 0.3rem 2rem;
+        border-radius: 12px;
+    }
+
+    .fechareserva img {
+        width: 25px;
+        height: 24px;
+        margin: 0;
+    }
+
+    .formreserva {
+        height: 44rem;
+        margin-top: 0rem;
+        line-height: 2rem;
+        text-align: left;
+        margin-left: 1rem;
+        margin-right: 0rem;
+        width: 1349px;
+        display: flex;
+        align-items: center;
+    }
+
+    .condicionesreserva {
+        width: 40%;
+        margin-right: 0rem;
+        font-size: 2rem;
+        text-align: justify;
+        line-height: 3rem;
+        margin-top: -6rem;
+    }
+
+    .formularioreserva {
+        width: 49%;
+        margin-left: 13rem;
+        background-color: #f6f1e9;
+    }
+
+    .form-container {
+        width: 465px;
+        margin: 7px 59px;
+        padding: 32px;
+        background-color: #f6f1e9;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container h2 {
+        color: #892c80;
+        font-size: 35px;
+        margin-bottom: -4px;
+        margin-top: -12px;
+    }
+
+    .subtitle {
+        color: #000;
+        font-weight: 500;
+        margin-bottom: 19px;
+        font-size: 13px;
+    }
+
+    .agradecimiento {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-image: url(./img/imgfinalizar.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 46rem;
+        margin: 0;
+        padding: 0;
+        width: 1351px;
+    }
+
+    .textodespedida {
+        /* margin-top: 0px; */
+        background-color: rgba(126, 46, 132, 0.5);
+        color: white;
+        height: 46rem;
+        max-width: 42%;
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 35px;
+        text-align: center;
+        /* padding-top: 71px; */
+        padding-left: 10px;
+        padding-right: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 5rem;
+    }
+
+    .footer {
+        background-color: #2274A5;
+        color: white;
+        padding: 2.5rem 1.5rem;
+        font-family: "Poppins", sans-serif;
+        margin-top: 2rem;
+        width: 133rem;
+    }
+
+    .footer-container {
+        gap: 18rem;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+  
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-logo img {
+        margin-bottom: 2rem;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+        margin-top: -3rem;
+    }
+  
+    .footer-contacto {
+      max-width: 300px;
+    }
+  
+    .footer-contacto p {
+      justify-content: flex-start;
+    }
+}
+
+
 
 @media (min-width: 992px ) {
     .maincontainer {
@@ -555,7 +1021,7 @@ width: 100%;
     }
 
     .header {
-        width: 1351px;
+        width: 1249px;
     }
     section.resumenreserva {
         display: flex;

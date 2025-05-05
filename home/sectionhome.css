@@ -35,36 +35,158 @@ body {
 }
 
 .header {
-    height: 30rem;
-    background-color: aliceblue;
-    width: 42rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 119px;
+}
+  
+  /* Botón hamburguesa visible solo en móviles */
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+  }
+  
+  /* Menú oculto por defecto */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li a {
+    text-decoration: none;
+    color: #7E2E84;
+    font-weight: 500;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav li a img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Cuando se activa el menú */
+  .nav.active {
+    display: block;
+  }
+
+
+.imagenyfrase {
+    background-image: url(./img/imagen\ home.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagenyfrase h1 {
+    color: black;
+    display: flex;
+    font-size: 40px;
+    align-items: center;
+    margin-left: 4rem;
+    margin-top: -3rem;
+}
+
+.frase1 {
+    margin-top: 1rem;
+}
+
+.frase2 {
+    margin-top: 1rem;
+}
+
+.frase3 {
+    margin-top: 1rem;
 }
 
 .main {
     flex-grow: 2;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin: 20px auto;
+    margin-left: 7rem;
+    gap: 1rem;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #7E2E84;
+    border-radius: 10px;
+    color: #7E2E84;
+    font-size: 16px;
+    outline: none;
+    flex-grow: 1; 
+}
+
+.search-button {
+    padding: 10px;
+    color: #7E2E84;
+    border: 1px solid #7E2E84;
+    border-radius: 10px;
+    border-color: #7E2E84;
+    font-size: 16px;
+    outline: none;
+}
+
 .experiencias {
     padding: 4rem 2rem;
     text-align: center;
-  }
-  
-  .experiencias h2 {
+    margin-top: -42px;
+}
+
+.experiencias h2 {
     font-size: 2.4rem;
     margin-bottom: 3rem;
     font-weight: bold;
-  }
-  
-  /* Grid de las cards */
-  .experiencias-grid {
+}
+
+.experiencias-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-  }
-  
-  /* Card base */
-  .card-tour {
+}
+
+.card-tour {
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -184,19 +306,219 @@ body {
     cursor: pointer;
     align-self: center;
 }
-  
+
   /* Agrupación para las cards pequeñas */
-  .card-group {
+.card-group {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.opiniones {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cuadro1,
+.cuadro2,
+.cuadro3{
+    background-color: #7E2E84;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.opiniones h4 {
+    font-size: 1.1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.estrellas {
+    height: 64px;
+    width: 104px;
+    margin-top: -2rem;
+}
+
+.footer {
+    background-color: #2274A5;
+    color: white;
+    padding: 2.5rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    margin-top: 1rem;
+}
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0rem;
+    margin-top: -3REM;
+}
+  
+  .footer-logo img {
+    height: 140px;
+    margin-bottom: 1rem;
+}
+  
+  .social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .social-icons img {
+    width: 26px;
+    height: 26px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  
+  .footer-contacto h4 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+  
+  .footer-contacto p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+  }
+  
+  .footer-contacto img {
+    width: 20px;
+    height: 20px;
   }
 
+
+@media (max-width: 800px){
+    .column{
+        flex: 50%;
+    }
+}
+
+@media (max-width: 600px){
+    .column{
+        flex: 100%;
+    }
+}
+
+@media ( min-width: 435px ) {
+    .search-container {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        margin: 20px auto;
+    }
+}
+
 @media ( min-width: 768px ) {
+    .header {
+        flex-direction: row;
+        padding: 1rem 4rem;
+      }
+    
+      .menu-toggle {
+        display: none; /* Ocultar hamburguesa */
+      }
+    
+      .nav {
+        display: block !important;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+    
+      .nav ul {
+        flex-direction: row;
+        gap: 2.5rem;
+      }
+    
+      .nav li a {
+        font-size: 1.5rem;
+      }
+    
+      .nav li a img {
+        width: 22px;
+        height: 22px;
+      }
+
+    .imagenyfrase h1 {
+        color: black;
+        display: flex;
+        font-size: 40px;
+        align-items: center;
+        margin-left: 9rem;
+        margin-top: -3rem;
+    }
     .card-group {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         margin-top: 1rem;
+    }
+
+    .footer-container {
+        gap: 25rem;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+  
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-logo img {
+        margin-bottom: 2rem;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+        margin-top: -3rem;
+    }
+  
+    .footer-contacto {
+        max-width: 300px;
+        margin-top: 2rem;
+    }
+  
+    .footer-contacto p {
+      justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1200px ) {
+    
+    .imagenyfrase h1 {
+        color: black;
+        display: flex;
+        font-size: 40px;
+        align-items: center;
+        margin-left: 16rem;
+        margin-top: -3rem;
+    }
+    
+    .experiencias-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 19rem;
+        justify-content: center;
     }
 }
